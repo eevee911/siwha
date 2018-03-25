@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,80 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
  
- <script type='text/javascript'>//<![CDATA[
-$(window).load(function(){
-$(document).ready(function(){
-    var leeftijd=$("#leeftijd");
-    var paracetamol = 15;
-    var ibuprofen = 10;
-    var hartman = 20;
-    var diazepam = 0.5;
-    var valium = 0.1;
-    var glucose10 = 2;
-    var ventolin5 = 2.5;
-    var ventolin6 = 5;
-    var adrenaline = 0.1;
-    var adrenalinesc = 0.01;
-    var solu = 4;
-    var cordarone = 5;
-    var gewicht=$("#gewicht");
-function bereken(e){
-	var total=isNaN(gewicht.val()* paracetamol) ? 0 :(gewicht.val()* paracetamol)
-		      var show = "Paracetamol <b>" + total + "mg </b> siroop bij pijn 4 tot 6 <br />";
-		         show += "Paracetamol <b>" + total + "mg </b> iv (15 tot 30 min) bij pijn vanaf 7 <br />";
 
-		         total=isNaN(gewicht.val()* ibuprofen) ? 0 :(gewicht.val()* ibuprofen)
-		         show += "Ibuprufen <b> " + total + "mg </b> siroop (vanaf 6 maanden)<br />";
-
-		         total=isNaN(gewicht.val()* hartman) ? 0 :(gewicht.val()* hartman)
-		         show += "Hartmann <b> " + total + "ml </b> evaluatie na elke bolus <br />";
-
-		         total=isNaN(gewicht.val()* diazepam) ? 0 :(gewicht.val()* diazepam)
-		         show += "Diazepam <b> " + total.toFixed(1) + "mg </b>RECTAAL aangelengd tot 10ml <br />";
-		                  
-		         total=isNaN(gewicht.val()* valium) ? 0 :(gewicht.val()* valium)
-		         show += "Valium <b> " + total.toFixed(1) + "mg </b>IV aangelengd tot 10ml <br />";
-
-		          total=isNaN(gewicht.val()* glucose10) ? 0 :(gewicht.val()* glucose10)
-		          show += "Glucose 10% <b> " + total + "ml </b>IV <br />";
-
-		          show += "Ventolin <5j <b> " + ventolin5 + "mg </b>aangelengd 4ml <br />";
-
-		          show += "Ventolin >5j <b> " + ventolin6 + "mg </b>aangelengd 4ml <br />";
-
-		          total=isNaN(gewicht.val()* adrenaline) ? 0 :(gewicht.val()* adrenaline)
-		          show += "Adrenaline (Laryngitis) <b> " + total.toFixed(1) + "mg </b> Aerosol, max 4 mg <br />";
-
-		          total=isNaN(gewicht.val()* adrenalinesc) ? 0 :(gewicht.val()* adrenalinesc)
-		          show += "Adrenaline (Allergie) <b> " + total.toFixed(2) + "mg </b>SC max 0.3 SC <br />";
-
-		          total=isNaN(gewicht.val()* solu) ? 0 :(gewicht.val()* solu)
-		          show += "Solumedrol <b> " + total.toFixed(0) + "mg </b><br />";
-		                               	        
-		          total=isNaN(gewicht.val()* cordarone) ? 0 :(gewicht.val()* cordarone)
-		          show += "Cordarone <b> " + total.toFixed(0) + "mg </b>IV max 300mg<br />";
-		                                              
-		          $("#show").html(show);
-}
-    gewicht.keyup(function(){
-        bereken();
-        leeftijd.val("");
-    });
-
-    leeftijd.keyup(function(){
-    	var bergewicht=((leeftijd.val() * 2) + 8);
-        gewicht.val(bergewicht);
-        bereken();
-    });
-
-});
-});//]]> 
-
-</script>
  
  
  
@@ -98,8 +29,74 @@ function bereken(e){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
-  <script>
+  <script type='text/javascript'>//<![CDATA[
+  $(window).on( "load",function(){
+  $(document).ready(function(){
+      var leeftijd=$("#leeftijd");
+      var paracetamol = 15;
+      var ibuprofen = 10;
+      var hartman = 20;
+      var diazepam = 0.5;
+      var valium = 0.1;
+      var glucose10 = 2;
+      var ventolin5 = 2.5;
+      var ventolin6 = 5;
+      var adrenaline = 0.1;
+      var adrenalinesc = 0.01;
+      var solu = 4;
+      var cordarone = 5;
+      var gewicht=$("#gewicht");
+  function bereken(e){
+  	var total=isNaN(gewicht.val()* paracetamol) ? 0 :(gewicht.val()* paracetamol)
+  		      var show = "Paracetamol <b>" + total + "mg </b> siroop bij pijn 4 tot 6 <br />";
+  		         show += "Paracetamol <b>" + total + "mg </b> iv (15 tot 30 min) bij pijn vanaf 7 <br />";
 
+  		         total=isNaN(gewicht.val()* ibuprofen) ? 0 :(gewicht.val()* ibuprofen)
+  		         show += "Ibuprufen <b> " + total + "mg </b> siroop (vanaf 6 maanden)<br />";
 
-</script>
+  		         total=isNaN(gewicht.val()* hartman) ? 0 :(gewicht.val()* hartman)
+  		         show += "Hartmann <b> " + total + "ml </b> evaluatie na elke bolus <br />";
+
+  		         total=isNaN(gewicht.val()* diazepam) ? 0 :(gewicht.val()* diazepam)
+  		         show += "Diazepam <b> " + total.toFixed(1) + "mg </b>RECTAAL aangelengd tot 10ml <br />";
+  		                  
+  		         total=isNaN(gewicht.val()* valium) ? 0 :(gewicht.val()* valium)
+  		         show += "Valium <b> " + total.toFixed(1) + "mg </b>IV aangelengd tot 10ml <br />";
+
+  		          total=isNaN(gewicht.val()* glucose10) ? 0 :(gewicht.val()* glucose10)
+  		          show += "Glucose 10% <b> " + total + "ml </b>IV <br />";
+
+  		          show += "Ventolin <5j <b> " + ventolin5 + "mg </b>aangelengd 4ml <br />";
+
+  		          show += "Ventolin >5j <b> " + ventolin6 + "mg </b>aangelengd 4ml <br />";
+
+  		          total=isNaN(gewicht.val()* adrenaline) ? 0 :(gewicht.val()* adrenaline)
+  		          show += "Adrenaline (Laryngitis) <b> " + total.toFixed(1) + "mg </b> Aerosol, max 4 mg <br />";
+
+  		          total=isNaN(gewicht.val()* adrenalinesc) ? 0 :(gewicht.val()* adrenalinesc)
+  		          show += "Adrenaline (Allergie) <b> " + total.toFixed(2) + "mg </b>SC max 0.3 SC <br />";
+
+  		          total=isNaN(gewicht.val()* solu) ? 0 :(gewicht.val()* solu)
+  		          show += "Solumedrol <b> " + total.toFixed(0) + "mg </b><br />";
+  		                               	        
+  		          total=isNaN(gewicht.val()* cordarone) ? 0 :(gewicht.val()* cordarone)
+  		          show += "Cordarone <b> " + total.toFixed(0) + "mg </b>IV max 300mg<br />";
+  		                                              
+  		          $("#show").html(show);
+  }
+  $( "#gewicht" ).on( "keyup", function() {
+          bereken();
+          leeftijd.val("");
+      });
+
+  $( "#leeftijd" ).on( "keyup", function() {
+      	var bergewicht=((leeftijd.val() * 2) + 8);
+          gewicht.val(bergewicht);
+          bereken();
+      });
+
+  });
+  });//]]> 
+
+  </script>
 </html>
